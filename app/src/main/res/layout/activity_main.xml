@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginBottom="50dp"
+        >
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/bottom_corner"
+                />
+
+            <TextView
+                android:id="@+id/appname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/baloo"
+                android:text="@string/covid_19"
+                android:textColor="@color/colorWhite"
+                android:textSize="40sp"
+                android:layout_marginTop="20dp"
+                />
+
+            <TextView
+                android:id="@+id/text_case"
+                android:layout_below="@id/appname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:layout_marginLeft="10dp"
+                android:text="COVID - 19 Cases OverView"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/updated_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_case"
+                android:layout_marginStart="15dp"
+                android:fontFamily="sans-serif"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:id="@+id/l1"
+                android:layout_below="@id/updated_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="5dp"
+                >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="20dp"
+
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                            android:id="@+id/textIndia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Across India"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#000"
+                            android:fontFamily="@font/baloo"
+                            />
+                        <LinearLayout
+                            android:layout_below="@id/textIndia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_margin="20dp"
+                            >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Confirmed"
+                                    android:maxLines="1"
+                                    android:textColor="#000"
+                                    />
+                                <TextView
+                                    android:id="@+id/AcrossIndiaConfirmedCases"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="@color/colorRed"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="5dp"
+
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text=""
+                                    android:textColor="@color/colorRed"
+                                    android:id="@+id/todayConfirmed"
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Recovered"
+                                    android:maxLines="1"
+                                    android:textColor="#000"
+                                    />
+                                <TextView
+                                    android:id="@+id/AcrossIndiaRecoveredCases"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="@color/colorGreen"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="5dp"
+
+                                    />
+                                <TextView
+                                    android:id="@+id/todayRecovered"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="@color/colorGreen"
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Deceased"
+                                    android:maxLines="1"
+                                    android:textColor="#000"
+                                    />
+                                <TextView
+                                    android:id="@+id/AcrossIndiaDeathsCases"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="5dp"
+                                    />
+                                <TextView
+                                    android:id="@+id/todayDeceased"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="#000"
+
+                                    />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="20dp"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                            android:id="@+id/textState"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Karnataka"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#000"
+                            android:fontFamily="@font/baloo"
+                            />
+                        <LinearLayout
+                            android:layout_below="@id/textState"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_margin="20dp"
+
+                            >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Confirmed"
+                                    android:maxLines="1"
+                                    android:textColor="#000"
+                                    />
+                                <TextView
+                                    android:id="@+id/StateConfirmedCases"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="@color/colorRed"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="5dp"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/todayStateConfirmed"
+                                    android:text=""
+                                    android:textColor="@color/colorRed"
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Recovered"
+                                    android:maxLines="1"
+                                    android:textColor="#000"
+                                    />
+                                <TextView
+                                    android:id="@+id/StateRecoveredCases"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="@color/colorGreen"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="5dp"
+
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/todayStateRecovered"
+                                    android:text=""
+                                    android:textColor="@color/colorGreen"
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Deceased"
+                                    android:maxLines="1"
+                                    android:textColor="#000"
+                                    />
+                                <TextView
+                                    android:id="@+id/StateDeathCases"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="5dp"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/todayStateDeath"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rel1"
+                android:layout_below="@id/l1"
+                android:background="#ff5200"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SYMPTOMS"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/baloo"
+                    style="@style/TextAppearance.AppCompat.Large"
+                    android:id="@+id/text"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    />
+                <include layout="@layout/symptoms_recycler"
+                    android:id="@+id/symptoms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text"
+                    />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_below="@id/rel1"
+                android:id="@+id/sampleCardView"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#b9ebcc"
+                app:cardCornerRadius="10dp"
+                android:elevation="10dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/textSample"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Samples Tested"
+                        android:fontFamily="@font/baloo"
+                        android:textColor="#000"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="10dp"
+                        />
+                    <TextView
+                        android:id="@+id/textNumberSample"
+                        android:layout_below="@id/textSample"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textStyle="bold"
+                        android:textColor="@color/colorRed"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="10dp"
+                        />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/medical"
+                        android:layout_alignParentEnd="true"
+                        />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/l2"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sampleCardView"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/stateWise"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="20dp"
+                        android:layout_weight="1"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="25dp"
+                            android:gravity="center"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/india"
+                                android:id="@+id/stateWisePhoto"
+                                android:layout_centerHorizontal="true"
+                                />
+                            <TextView
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/stateWisePhoto"
+                                android:text="State Wise/Dist./Zone"
+                                android:fontFamily="@font/baloo"
+                                android:textColor="#fff"
+                                android:gravity="center"
+                                />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:clickable="true"
+                        android:layout_marginRight="20dp"
+                        android:backgroundTint="@color/colorPrimary"
+                        app:cardCornerRadius="20dp"
+                        android:id="@+id/helpLine"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_weight="1"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="25dp"
+                            android:gravity="center"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/medical_helpline"
+                                android:id="@+id/helplinePhoto"
+                                android:layout_centerHorizontal="true"
+                                />
+                            <TextView
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/helplinePhoto"
+                                android:text="Help Line"
+                                android:fontFamily="@font/baloo"
+                                android:textColor="#fff"
+                                />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:clickable="true"
+                        android:backgroundTint="@color/colorPrimary"
+                        app:cardCornerRadius="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/medicalColleges"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_weight="1"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="25dp"
+                            android:gravity="center"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/hospitals"
+                                android:id="@+id/notificationPhoto"
+                                android:layout_centerHorizontal="true"
+                                />
+                            <TextView
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/notificationPhoto"
+                                android:text="Hospitals"
+                                android:fontFamily="@font/baloo"
+                                android:textColor="#fff"
+                                />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginRight="20dp"
+                        android:backgroundTint="@color/colorPrimary"
+                        app:cardCornerRadius="20dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:id="@+id/creator"
+                        android:layout_weight="1"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="25dp"
+                            android:gravity="center"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/creative"
+                                android:id="@+id/creatorPhoto"
+                                android:layout_centerHorizontal="true"
+                                />
+                            <TextView
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/creatorPhoto"
+                                android:text="Creator"
+                                android:fontFamily="@font/baloo"
+                                android:textColor="#fff"
+                                />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rel2"
+                android:layout_below="@id/l2"
+                android:layout_marginTop="20dp"
+                android:background="#fcbf1e"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PRECAUTIONS"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/baloo"
+                    style="@style/TextAppearance.AppCompat.Large"
+                    android:id="@+id/precautionsText"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    />
+                <include layout="@layout/precautions_recycler"
+                    android:id="@+id/symptoms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/precautionsText"
+                    />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
+
+</RelativeLayout>
+
+
+
+
+
+

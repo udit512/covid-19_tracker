@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="30dp"
+        android:id="@+id/districtCardView"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            >
+            <TextView
+                android:id="@+id/districtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="District"
+                android:fontFamily="@font/baloo"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/DistrictConfirmedCases"
+                android:layout_below="@id/districtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Confirmed Cases:  55"
+                android:textSize="15sp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+
+                />
+            <TextView
+                android:id="@+id/districtZone"
+                android:layout_below="@id/DistrictConfirmedCases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Zone: RED"
+                android:textSize="15sp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+
+                />
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
